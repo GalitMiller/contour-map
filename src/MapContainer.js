@@ -9,7 +9,7 @@ const margin = {top: 20, right: 30, bottom: 30, left: 40}
 
 const MapContainer = () => {
     const d3Container = useRef(null)
-    const [granularity, setGranularity] = useState(15);
+    const [granularity, setGranularity] = useState(10);
     const [map, setMap] = useState('world')
 
     const handleGranularityChanged = useCallback(e => {
