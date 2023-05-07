@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -14,8 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,130 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.feature.FeatureCollection {
+  filter: url(#glow);
+  fill: #26E1E9;
+  stroke: darkgrey;
+  opacity: 0.8;
+}
+
+.feature.MultiLineString{
+  stroke: lightgrey;
+  stroke-width: 0.25;
+  opacity: 0.6;
+  fill: none;
+}
+
+.feature.MultiLineString.test{
+  stroke: pink;
+  stroke-width: 2;
+  opacity: 2;
+  fill: none;
+}
+
+.feature-label {
+  text-anchor: middle;
+}
+.feature-label.countries {
+  fill: black;
+  fill-opacity: 0.5;
+  font-weight: 300;
+  font-size: 12px;
+}
+.feature-label.places {
+  fill: black;
+  font-size: 10px;
+}
+
+.point {
+  opacity: 1;
+  /*fill: #381BBF;*/
+}
+
+.customSlider {
+  /* max width of your slider */
+  max-width: 300px;
+  /* Optional: Only If you want to center your slider in the page */
+  margin: auto;
+}
+
+.customSlider-track {
+  /* Top value to align your track to the center of your thumb */
+  top: 8px;
+  /* thickness of the track */
+  height: 4px;
+  /* default color of your track */
+  background: var(--track-color);
+}
+
+:root {
+  --main-color: rgb(104, 117, 217);
+  --main-color-hover: rgb(104, 117, 217, 0.2);
+  --track-color: #ddd;
+}
+
+.customSlider-track.customSlider-track-0 {
+  /* color of the track before the thumb */
+  background: var(--main-color);
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: 33fr 33fr 33fr;
+  padding: 10px;
+}
+
+.react-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.react-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.react-switch-label .react-switch-button {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.react-switch-left {
+  color: white;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+
+.react-switch-right {
+  color: white;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 30px;
 }

@@ -6,9 +6,13 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "d3": "^7.8.4",
+    "d3-contour": "^4.0.2",
+    "d3-geo-polygon": "^1.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "topojson-client": "^3.1.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
