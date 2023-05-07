@@ -5,7 +5,7 @@ import countriesJson from '../data/ne_110m_countries.json'
 import placesJson from '../data/ne_110m_places.json'
 import usJson from "../data/states-10m.json"
 
-import { GroupsXHigh, GroupsHigh, GroupsMed, GroupsLow, ScaleGranularity } from '../data/groups'
+import {GroupsXHigh, GroupsHigh, GroupsMed, GroupsLow, ScaleGranularity, StrGranularity} from '../data/groups'
 
 const world = topojson.feature(countriesJson, countriesJson.objects.countries)
 const us = topojson.feature(usJson, usJson.objects.states)
@@ -58,9 +58,20 @@ const DensityChart = function () {
 
             // add legend
             let legendd = theMap.selectAll('.legends').data(['once']);
+
+            // granularity level
+            // let legendt = legendd.enter()
+            //     .append('text')
+            //     .attr('class', 'granularity')
+            // legendt.merge(legendt)
+            //     .text(StrGranularity(granularity))
+
             legendd = legendd.enter()
                 .append('g').attr('class', 'legends')
-                .merge(legendd);
+                .merge(legendd)
+
+            legendd.selectAll('text.granularity')
+                .text(StrGranularity(granularity))
 
             // add map features
             let mapg = theMap.selectAll('.map').data(['once']);
@@ -228,6 +239,7 @@ const DensityChart = function () {
                 .attr('y', height + 30)
                 .text((d, i) => `${i} - ${i + 1}`)
                 .attr('fill', 'white')
+
         });
     }
 

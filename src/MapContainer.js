@@ -58,7 +58,11 @@ const MapContainer = () => {
                         onChange={handleGranularityChanged} />
                 </div>
                 <div>
-                    <Toggle on={map === 'world'} left="US" right="World" onToggle={handleMapToggle}/>
+                    <Toggle 
+                        on={map === 'world'}
+                        left="US"
+                        right="World"
+                        onToggle={handleMapToggle}/>
                 </div>
 
             </div>

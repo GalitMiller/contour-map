@@ -113,12 +113,14 @@ const GroupsLow = data.reduce((a, c) => {
     return { ...a, [key]: e}
 }, GridLow)
 
-const ScaleGranularity = granularity => granularity > 10 ? LOW : granularity > 5 ? MED : HIGH // granularity > 2 ? HIGH : XHIGH
+const ScaleGranularity = g => g > 10 ? LOW : g > 5 ? MED : HIGH // f > 2 ? HIGH : XHIGH
 
+const StrGranularity = g => g > 10 ? 'low' : g > 5 ? 'medium' : 'high'
 export {
     // GroupsXHigh,
     GroupsHigh,
     GroupsMed,
     GroupsLow,
     ScaleGranularity,
+    StrGranularity,
 }
