@@ -5,7 +5,7 @@ import countriesJson from '../data/ne_110m_countries.json'
 import placesJson from '../data/ne_110m_places.json'
 import usJson from "../data/states-10m.json"
 
-import {GroupsXHigh, GroupsHigh, GroupsMed, GroupsLow, ScaleGranularity, StrGranularity} from '../data/groups'
+import {GroupsSHigh, GroupsXHigh, GroupsHigh, GroupsMed, GroupsLow, ScaleGranularity, StrGranularity} from '../data/groups'
 
 const world = topojson.feature(countriesJson, countriesJson.objects.countries)
 const us = topojson.feature(usJson, usJson.objects.states)
@@ -178,8 +178,12 @@ const DensityChart = function () {
             let groups = GroupsMed
             if (granularity > 10) {
                 groups = GroupsLow
-            } else if (granularity <= 5) {
+            } else if (granularity > 5) {
                 groups = GroupsHigh
+            } else if (granularity > 2) {
+                groups = GroupsXHigh
+            } else {
+                groups = GroupsSHigh
             }
 
             const _granularity = ScaleGranularity(granularity)
