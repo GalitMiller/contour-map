@@ -1,5 +1,5 @@
-export HOST=localhost
-export PORT=4200
+# export HOST=localhost
+# export PORT=4200
 
 .PHONY: install
 install:
@@ -7,7 +7,7 @@ install:
 
 .PHONY: run
 run:
-	export HOST=localhost
+	# export HOST=localhost
 	npm start
 
 .PHONY: start
